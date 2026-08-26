@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Assets-only Worker: serves the prerendered static site from dist/client.
+  // No worker script (main) yet — add one when server functions or
+  // edge-side language redirect become necessary.
+  "name": "lumencite-com",
+  "compatibility_date": "2026-08-26",
+  "assets": {
+    "directory": "./dist/client",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [{ "pattern": "lumencite.com", "custom_domain": true }]
+}

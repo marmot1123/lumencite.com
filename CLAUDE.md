@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## このリポジトリについて
 
-AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サイト。`https://lumencite.com` にデプロイ予定。ホスティング先は未決定（静的出力なので Cloudflare / Netlify 等どこでも可）。
+AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サイト。`https://lumencite.com` で公開（ホスティングは Cloudflare Workers の静的アセット配信）。
 
 ## 技術スタック
 
@@ -19,6 +19,13 @@ AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サ�
 - `pnpm lint` / `pnpm check` — ESLint / Prettier チェック
 - `pnpm format` — Prettier + eslint --fix 一括整形
 - `pnpm generate-routes` — ルートツリー再生成（通常は dev/build が自動で行う）
+- `pnpm deploy` — ビルド + `wrangler deploy` で Cloudflare へデプロイ（要 `wrangler login` 済み）
+
+## デプロイ（Cloudflare Workers）
+
+- `wrangler.jsonc` は **assets-only Worker**（`main` なし）。`dist/client` を静的配信し、カスタムドメイン `lumencite.com` を `routes` の `custom_domain` で紐付け。
+- サーバー機能（お問い合わせ、`/` の Accept-Language エッジリダイレクト等）が必要になったら `main` に Worker スクリプトを足す。TanStack Start の Cloudflare アダプタへの移行も可。
+- 404 は現在 `not_found_handling: "none"`（素の 404）。専用 404 ページを作ったら `404-page` に変更する。
 
 ## サイト構成（日英 2 言語）
 
