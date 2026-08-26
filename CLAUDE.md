@@ -19,7 +19,7 @@ AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サ�
 - `pnpm lint` / `pnpm check` — ESLint / Prettier チェック
 - `pnpm format` — Prettier + eslint --fix 一括整形
 - `pnpm generate-routes` — ルートツリー再生成（通常は dev/build が自動で行う）
-- `pnpm deploy` — ビルド + `wrangler deploy` で Cloudflare へデプロイ（要 `wrangler login` 済み）
+- `pnpm run deploy` — ビルド + `wrangler deploy` で Cloudflare へデプロイ（要 `wrangler login` 済み）。**`run` を省略すると pnpm 組み込みの workspace deploy コマンドに解釈されて失敗する**
 
 ## デプロイ（Cloudflare Workers）
 
