@@ -23,6 +23,9 @@ AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サ�
 
 ## デプロイ（Cloudflare Workers）
 
+- **`main` への push で自動デプロイ**（Workers Builds が GitHub リポジトリ `marmot1123/lumencite.com` と接続済み。build: `pnpm run build` → deploy: `npx wrangler deploy`）。非本番ブランチは `wrangler versions upload` でプレビュー版になる。
+- `pnpm run deploy` はローカルからの手動デプロイ手段として残っている。
+
 - `wrangler.jsonc` は **assets-only Worker**（`main` なし）。`dist/client` を静的配信し、カスタムドメイン `lumencite.com` を `routes` の `custom_domain` で紐付け。
 - サーバー機能（お問い合わせ、`/` の Accept-Language エッジリダイレクト等）が必要になったら `main` に Worker スクリプトを足す。TanStack Start の Cloudflare アダプタへの移行も可。
 - 404 は現在 `not_found_handling: "none"`（素の 404）。専用 404 ページを作ったら `404-page` に変更する。
