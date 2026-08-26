@@ -1,0 +1,1468 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Serif:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Sans+JP:wght@400;500;600;700&amp;display=swap"
+        />
+        <style>
+          body {
+            margin: 0;
+            background: oklch(0.985 0.003 80);
+            font-family: 'IBM Plex Sans', 'Noto Sans JP', system-ui, sans-serif;
+            color: oklch(0.22 0.01 70);
+            -webkit-font-smoothing: antialiased;
+          }
+          a {
+            color: oklch(0.55 0.14 60);
+            text-decoration: none;
+          }
+          a:hover {
+            color: oklch(0.48 0.14 55);
+          }
+        </style>
+      </helmet>
+      <div
+        style="
+          width: 1440px;
+          background: oklch(0.985 0.003 80);
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <!-- ============ NAV ============ -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            padding: 0 56px;
+            border-bottom: 1px solid oklch(0.95 0.004 80);
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <img
+              src="lumencite.svg"
+              style="width: 30px; height: 30px"
+              alt="LumenCite"
+            />
+            <span
+              style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em"
+              >LumenCite</span
+            >
+          </div>
+          <div style="display: flex; align-items: center; gap: 32px">
+            <span
+              style="
+                font-size: 13.5px;
+                font-weight: 500;
+                color: oklch(0.5 0.008 70);
+              "
+              >機能</span
+            >
+            <span
+              style="
+                font-size: 13.5px;
+                font-weight: 500;
+                color: oklch(0.5 0.008 70);
+              "
+              >ダウンロード</span
+            >
+            <span
+              style="
+                font-size: 13.5px;
+                font-weight: 500;
+                color: oklch(0.5 0.008 70);
+              "
+              >GitHub</span
+            >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                background: oklch(0.62 0.14 65);
+                color: #ffffff;
+                font-size: 13.5px;
+                font-weight: 600;
+                padding: 8px 16px;
+                border-radius: 8px;
+              "
+            >
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 4v11"></path>
+                <polyline points="7 11 12 16 17 11"></polyline>
+                <path d="M5 20h14"></path>
+              </svg>
+              <span>ダウンロード</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ HERO ============ -->
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 84px 56px 0;
+            background: radial-gradient(
+              ellipse 900px 500px at 50% -80px,
+              oklch(0.95 0.045 75) 0%,
+              oklch(0.985 0.003 80 / 0) 70%
+            );
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              background: oklch(0.95 0.04 70);
+              color: oklch(0.45 0.12 60);
+              font-size: 12.5px;
+              font-weight: 600;
+              padding: 6px 14px;
+              border-radius: 999px;
+            "
+          >
+            <span>オープンソースの文献管理アプリ</span>
+            <span style="opacity: 0.55">·</span>
+            <span>macOS / Windows / Linux</span>
+          </div>
+          <h1
+            style="
+              margin: 26px 0 0;
+              font-size: 52px;
+              line-height: 1.28;
+              font-weight: 700;
+              letter-spacing: -0.025em;
+              text-align: center;
+            "
+          >
+            文献ライブラリを、<br /><span style="color: oklch(0.58 0.15 60)"
+              >対話できる</span
+            >研究基盤に。
+          </h1>
+          <p
+            style="
+              margin: 22px 0 0;
+              font-size: 16.5px;
+              line-height: 1.85;
+              color: oklch(0.5 0.008 70);
+              text-align: center;
+              max-width: 660px;
+            "
+          >
+            LumenCite は研究者のためのオープンソース文献管理アプリ。PDF
+            を定理・数式・図表のレベルまで構造化し、ライブラリ全体を横断して AI
+            と対話できます。BibTeX 自動同期で、LaTeX
+            執筆までそのままつながります。
+          </p>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              margin-top: 34px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: oklch(0.62 0.14 65);
+                color: #ffffff;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 13px 24px;
+                border-radius: 9px;
+                box-shadow: 0 2px 8px oklch(0.62 0.14 65 / 0.3);
+              "
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 4v11"></path>
+                <polyline points="7 11 12 16 17 11"></polyline>
+                <path d="M5 20h14"></path>
+              </svg>
+              <span>macOS 版をダウンロード</span>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: #ffffff;
+                border: 1px solid oklch(0.86 0.006 80);
+                color: oklch(0.22 0.01 70);
+                font-size: 15px;
+                font-weight: 600;
+                padding: 13px 24px;
+                border-radius: 9px;
+              "
+            >
+              <span>GitHub で見る</span>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17L17 7"></path>
+                <polyline points="9 7 17 7 17 15"></polyline>
+              </svg>
+            </div>
+          </div>
+          <p
+            style="
+              margin: 16px 0 0;
+              font-size: 12.5px;
+              color: oklch(0.65 0.005 70);
+            "
+          >
+            無料 · MIT ライセンス · Universal Binary（Apple Silicon / Intel） ·
+            Windows / Linux 版は Releases から
+          </p>
+
+          <!-- ============ APP SCREENSHOT ============ -->
+          <div
+            style="
+              width: 1200px;
+              margin-top: 60px;
+              border-radius: 12px;
+              overflow: hidden;
+              background: #ffffff;
+              border: 1px solid oklch(0.9 0.008 80);
+              box-shadow:
+                0 30px 60px oklch(0 0 0 / 0.12),
+                0 8px 20px oklch(0 0 0 / 0.07);
+            "
+          >
+            <img
+              src="library-view.webp"
+              style="display: block; width: 100%; height: auto"
+              alt="LumenCite ライブラリ画面"
+            />
+          </div>
+        </div>
+
+        <!-- ============ FEATURE 1: LCIR ============ -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 88px;
+            padding: 120px 120px 0;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="flex: 1; display: flex; flex-direction: column; gap: 18px"
+          >
+            <span
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                color: oklch(0.58 0.15 60);
+              "
+              >LCIR — PAPER STRUCTURE</span
+            >
+            <h2
+              style="
+                margin: 0;
+                font-size: 32px;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                line-height: 1.35;
+              "
+            >
+              論文を、機械が読める<br />構造へ。
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.9;
+                color: oklch(0.5 0.008 70);
+              "
+            >
+              PDF と arXiv の TeX
+              ソースを解析し、セクション・段落・定理・証明・数式・図表をページ座標つきのツリー（LCIR）に変換。論文は追加した瞬間に自動で解析されます。全文検索の索引と図表の切り出しはこの構造から作られ、AI
+              チャットは「Theorem
+              2.3」のような文中参照を実体のノードとして読み取ります。
+            </p>
+          </div>
+          <div
+            style="
+              width: 500px;
+              background: #ffffff;
+              border: 1px solid oklch(0.92 0.005 80);
+              border-radius: 12px;
+              padding: 22px 24px;
+              box-sizing: border-box;
+              box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.04),
+                0 10px 30px rgba(20, 15, 8, 0.07);
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid oklch(0.95 0.004 80);
+                margin-bottom: 8px;
+              "
+            >
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.5 0.008 70)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 3h8l4 4v14H6z"></path>
+                <path d="M14 3v4h4"></path>
+              </svg>
+              <span
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 11.5px;
+                  color: oklch(0.5 0.008 70);
+                "
+                >arXiv:quant-ph/0303081 · LCIR</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 0;
+                font-size: 13px;
+                font-weight: 600;
+              "
+            >
+              <span>§2 コイン付き量子ウォーク</span>
+              <span
+                style="
+                  margin-left: auto;
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 10px;
+                  color: oklch(0.65 0.005 70);
+                "
+                >p.3</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 0 5px 22px;
+                font-size: 12.5px;
+                border-left: 1.5px solid oklch(0.92 0.005 80);
+                margin-left: 7px;
+              "
+            >
+              <span style="color: oklch(0.5 0.008 70)"
+                >定義 2.1 — Coined walk</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 10px;
+                  color: oklch(0.65 0.005 70);
+                "
+                >p.3</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 6px 10px 6px 22px;
+                font-size: 12.5px;
+                border-left: 1.5px solid oklch(0.62 0.14 65);
+                margin-left: 7px;
+                background: oklch(0.95 0.04 70);
+                border-radius: 0 8px 8px 0;
+              "
+            >
+              <span style="font-weight: 600; color: oklch(0.4 0.12 60)"
+                >定理 2.3 — 混合時間の上界</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 10px;
+                  color: oklch(0.5 0.1 60);
+                "
+                >p.4 · bbox</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 0 5px 40px;
+                font-size: 12.5px;
+                border-left: 1.5px solid oklch(0.92 0.005 80);
+                margin-left: 7px;
+              "
+            >
+              <span style="color: oklch(0.5 0.008 70)">証明</span>
+              <span
+                style="
+                  margin-left: auto;
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 10px;
+                  color: oklch(0.65 0.005 70);
+                "
+                >p.4</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 0 5px 22px;
+                font-size: 12.5px;
+                border-left: 1.5px solid oklch(0.92 0.005 80);
+                margin-left: 7px;
+              "
+            >
+              <span
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  color: oklch(0.5 0.008 70);
+                "
+                >式 (14)</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 10px;
+                  color: oklch(0.65 0.005 70);
+                "
+                >p.5</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 0 5px 22px;
+                font-size: 12.5px;
+                border-left: 1.5px solid oklch(0.92 0.005 80);
+                margin-left: 7px;
+              "
+            >
+              <span style="color: oklch(0.5 0.008 70)">図 3 — 分布の比較</span>
+              <span
+                style="
+                  margin-left: auto;
+                  font-size: 9.5px;
+                  font-weight: 600;
+                  color: oklch(0.45 0.12 60);
+                  background: oklch(0.95 0.04 70);
+                  border-radius: 4px;
+                  padding: 1px 6px;
+                "
+                >切り出し済み</span
+              >
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid oklch(0.95 0.004 80);
+                font-size: 11.5px;
+                color: oklch(0.65 0.005 70);
+                line-height: 1.6;
+              "
+            >
+              この構造が、全文検索の索引・図表の切り出し・AI
+              チャットの引用の土台になっています
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ FEATURE 2: CHAT ============ -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 88px;
+            padding: 110px 120px 0;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              width: 500px;
+              background: #ffffff;
+              border: 1px solid oklch(0.92 0.005 80);
+              border-radius: 12px;
+              padding: 22px 24px;
+              box-sizing: border-box;
+              box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.04),
+                0 10px 30px rgba(20, 15, 8, 0.07);
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            "
+          >
+            <div
+              style="
+                align-self: flex-end;
+                max-width: 360px;
+                background: oklch(0.975 0.004 80);
+                border: 1px solid oklch(0.95 0.004 80);
+                border-radius: 12px 12px 3px 12px;
+                padding: 10px 14px;
+                font-size: 13px;
+                line-height: 1.65;
+              "
+            >
+              コイン付き量子ウォークの標準的な定式化は、この中だとどの論文に従うのがいい？
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  background: oklch(0.975 0.004 80);
+                  border: 1px solid oklch(0.95 0.004 80);
+                  border-radius: 7px;
+                  padding: 6px 10px;
+                "
+              >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="oklch(0.5 0.008 70)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <circle cx="11" cy="11" r="6"></circle>
+                  <path d="M20 20l-4.2-4.2"></path>
+                </svg>
+                <span
+                  style="
+                    font-family: 'IBM Plex Mono', monospace;
+                    font-size: 11px;
+                    color: oklch(0.5 0.008 70);
+                  "
+                  >fulltext_search("coined quantum walk")</span
+                >
+                <span
+                  style="
+                    margin-left: auto;
+                    font-family: 'IBM Plex Mono', monospace;
+                    font-size: 10px;
+                    color: oklch(0.45 0.12 60);
+                    background: oklch(0.95 0.04 70);
+                    border-radius: 999px;
+                    padding: 1px 7px;
+                  "
+                  >7 hits</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  background: oklch(0.975 0.004 80);
+                  border: 1px solid oklch(0.95 0.004 80);
+                  border-radius: 7px;
+                  padding: 6px 10px;
+                "
+              >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="oklch(0.5 0.008 70)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 3h8l4 4v14H6z"></path>
+                  <path d="M14 3v4h4"></path>
+                </svg>
+                <span
+                  style="
+                    font-family: 'IBM Plex Mono', monospace;
+                    font-size: 11px;
+                    color: oklch(0.5 0.008 70);
+                  "
+                  >get_document_structure(kempe2003)</span
+                >
+                <span
+                  style="
+                    margin-left: auto;
+                    font-family: 'IBM Plex Mono', monospace;
+                    font-size: 10px;
+                    color: oklch(0.45 0.12 60);
+                    background: oklch(0.95 0.04 70);
+                    border-radius: 999px;
+                    padding: 1px 7px;
+                  "
+                  >§2</span
+                >
+              </div>
+              <div
+                style="font-size: 13px; line-height: 1.75; padding: 2px 2px 0"
+              >
+                導入としては Kempe
+                のレビューが最も整理されています。定義はヒルベルト空間
+                <span
+                  style="
+                    font-family: 'IBM Plex Serif', serif;
+                    font-style: italic;
+                  "
+                  >H = H<sub>C</sub> ⊗ H<sub>P</sub></span
+                >
+                上で与えられており、後続の Ambainis
+                の定式化とも整合します。<span
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 4px;
+                    font-size: 10.5px;
+                    font-weight: 600;
+                    color: oklch(0.45 0.12 60);
+                    background: oklch(0.95 0.04 70);
+                    border-radius: 5px;
+                    padding: 2px 7px;
+                    vertical-align: 2px;
+                  "
+                  >Kempe 2003 · §2.1 · p.4</span
+                >
+                ここは論文自身の記述です。
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                padding-top: 10px;
+                border-top: 1px solid oklch(0.95 0.004 80);
+                font-size: 11.5px;
+                color: oklch(0.65 0.005 70);
+              "
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <polyline points="13 6 19 12 13 18"></polyline>
+              </svg>
+              <span
+                >引用ブロックをクリックすると、PDF
+                の該当箇所がハイライトされます</span
+              >
+            </div>
+          </div>
+          <div
+            style="flex: 1; display: flex; flex-direction: column; gap: 18px"
+          >
+            <span
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                color: oklch(0.58 0.15 60);
+              "
+              >AGENTIC CHAT</span
+            >
+            <h2
+              style="
+                margin: 0;
+                font-size: 32px;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                line-height: 1.35;
+              "
+            >
+              ライブラリ全体と、<br />対話する。
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.9;
+                color: oklch(0.5 0.008 70);
+              "
+            >
+              AI が全文検索と LCIR
+              の読み取りツールを繰り返し呼び出しながら、複数の文献を横断して回答を組み立てます。回答は論文自身の記述と
+              LumenCite の推論を区別して提示。引用ブロックをクリックすれば、PDF
+              のその場所へ飛べます。スコープはライブラリ全体でも、選んだ数本だけでも。
+            </p>
+          </div>
+        </div>
+
+        <!-- ============ FEATURE 3: LATEX ============ -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 88px;
+            padding: 110px 120px 0;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="flex: 1; display: flex; flex-direction: column; gap: 18px"
+          >
+            <span
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                color: oklch(0.58 0.15 60);
+              "
+              >BIBTEX WORKFLOW</span
+            >
+            <h2
+              style="
+                margin: 0;
+                font-size: 32px;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                line-height: 1.35;
+              "
+            >
+              LaTeX 執筆に、<br />そのままつながる。
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.9;
+                color: oklch(0.5 0.008 70);
+              "
+            >
+              ライブラリを編集すると、指定したパスの .bib
+              ファイルへ自動で同期（VSCode LaTeX Workshop を想定した設計）。cite
+              key はピン留めでき、重複は自動で回避されます。ターミナルからは CLI
+              の
+              <span
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 13.5px;
+                  background: oklch(0.975 0.004 80);
+                  border: 1px solid oklch(0.92 0.005 80);
+                  border-radius: 4px;
+                  padding: 1px 6px;
+                "
+                >lumencite bib</span
+              >、Claude Code や Claude Desktop からは内蔵の MCP
+              サーバー経由で操作できます。
+            </p>
+          </div>
+          <div
+            style="
+              width: 500px;
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            "
+          >
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 18px 22px;
+                box-sizing: border-box;
+                box-shadow:
+                  0 1px 0 rgba(0, 0, 0, 0.04),
+                  0 10px 30px rgba(20, 15, 8, 0.07);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding-bottom: 10px;
+                  border-bottom: 1px solid oklch(0.95 0.004 80);
+                  margin-bottom: 12px;
+                "
+              >
+                <span
+                  style="
+                    font-family: 'IBM Plex Mono', monospace;
+                    font-size: 11px;
+                    color: oklch(0.5 0.008 70);
+                  "
+                  >main.tex</span
+                >
+              </div>
+              <div
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 12.5px;
+                  line-height: 1.9;
+                  color: oklch(0.35 0.01 70);
+                "
+              >
+                <div>
+                  <span style="color: oklch(0.5 0.1 250)">\section</span
+                  >{量子ウォークの基礎}
+                </div>
+                <div>コインあり量子ウォークの定義は</div>
+                <div>
+                  <span style="color: oklch(0.5 0.1 250)">\cite</span>{<span
+                    style="
+                      color: oklch(0.5 0.12 60);
+                      background: oklch(0.95 0.04 70);
+                      border-radius: 3px;
+                      padding: 0 3px;
+                    "
+                    >kempe2003</span
+                  >} に従う。
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 10px;
+                padding: 12px 18px;
+              "
+            >
+              <div
+                style="
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 999px;
+                  background: oklch(0.62 0.15 150);
+                "
+              ></div>
+              <span
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 12px;
+                  color: oklch(0.35 0.01 70);
+                "
+                >references.bib</span
+              >
+              <span
+                style="
+                  font-size: 11.5px;
+                  color: oklch(0.65 0.005 70);
+                  margin-left: auto;
+                "
+                >変更から 800ms で自動同期</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ FEATURE GRID ============ -->
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 120px 120px 0;
+            box-sizing: border-box;
+          "
+        >
+          <h2
+            style="
+              margin: 0;
+              font-size: 30px;
+              font-weight: 700;
+              letter-spacing: -0.02em;
+            "
+          >
+            研究の道具として、必要なものを全部。
+          </h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, minmax(0, 1fr));
+              gap: 16px;
+              margin-top: 44px;
+              width: 100%;
+            "
+          >
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="M20 20l-4.2-4.2"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >メタデータ自動取得</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >DOI / arXiv ID / ISBN を入れるだけ。CrossRef · arXiv · Open
+                Library から取得</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 3h8l4 4v14H6z"></path>
+                <path d="M14 3v4h4"></path>
+                <path d="M9 13h6"></path>
+                <path d="M9 17h4"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >PDF ビューア</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >3 色ハイライトとノート。1 エントリに本文＋補足資料など複数 PDF
+                を添付可能</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 5h16l-6 7v5l-4 2v-7z"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >全文検索と複合フィルタ</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >FTS5 による PDF 全文検索。種別・年・スター・タグを AND / OR
+                で積み重ね</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 8V5a1 1 0 0 1 1-1h3"></path>
+                <path d="M16 4h3a1 1 0 0 1 1 1v3"></path>
+                <path d="M20 16v3a1 1 0 0 1-1 1h-3"></path>
+                <path d="M8 20H5a1 1 0 0 1-1-1v-3"></path>
+                <path d="M8 10h8"></path>
+                <path d="M8 14h5"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >Vision OCR</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >テキストレイヤーのないスキャン PDF を LLM
+                ビジョンで転写し、検索可能に</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 7V3"></path>
+                <path d="M15 7V3"></path>
+                <path d="M7 7h10v4a5 5 0 0 1-10 0z"></path>
+                <path d="M12 16v5"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >MCP · CLI · Web Clipper</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >Claude Code などからライブラリを読み書き。Chrome
+                拡張でワンクリック取り込み</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 5H7l6 7-6 7h10"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >KaTeX 数式表示</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >抄録やノートの数式をそのままレンダリング。ノートは Markdown
+                で記述</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"
+                ></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >⌘K コマンドパレット</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >エントリ横断検索とグローバルアクションを、どこからでも呼び出し</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid oklch(0.92 0.005 80);
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.58 0.15 60)"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path>
+              </svg>
+              <span style="font-size: 14.5px; font-weight: 600"
+                >自動バックアップ</span
+              >
+              <span
+                style="
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: oklch(0.5 0.008 70);
+                "
+                >DB と添付ファイルを 1 つの zip に。14
+                世代保持し、検証つきで復元</span
+              >
+            </div>
+          </div>
+          <p
+            style="
+              margin: 26px 0 0;
+              font-size: 13px;
+              color: oklch(0.65 0.005 70);
+            "
+          >
+            ほかにも： LLM 要約（OpenAI / Anthropic、API キーは OS
+            キーチェーンに保管） · 日本語 / English UI · ライト / ダーク /
+            自動テーマ · 4 色のアクセントカラー ·
+            署名済み自動アップデート（macOS）
+          </p>
+        </div>
+
+        <!-- ============ DOWNLOAD ============ -->
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 120px 120px 0;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              width: 100%;
+              background: linear-gradient(
+                160deg,
+                oklch(0.95 0.045 75),
+                oklch(0.965 0.02 75)
+              );
+              border: 1px solid oklch(0.9 0.03 72);
+              border-radius: 18px;
+              padding: 56px 64px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              gap: 64px;
+            "
+          >
+            <div
+              style="flex: 1; display: flex; flex-direction: column; gap: 14px"
+            >
+              <h2
+                style="
+                  margin: 0;
+                  font-size: 27px;
+                  font-weight: 700;
+                  letter-spacing: -0.02em;
+                "
+              >
+                今日から、ライブラリと話しはじめる。
+              </h2>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 14.5px;
+                  line-height: 1.8;
+                  color: oklch(0.45 0.03 65);
+                "
+              >
+                macOS
+                版は署名・公証済みで、アプリ内から自動アップデート。Windows（.msi
+                / .exe）と Linux（.AppImage / .deb / .rpm）は GitHub Releases
+                からどうぞ。
+              </p>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  margin-top: 8px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: oklch(0.62 0.14 65);
+                    color: #ffffff;
+                    font-size: 14.5px;
+                    font-weight: 600;
+                    padding: 12px 22px;
+                    border-radius: 9px;
+                  "
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 4v11"></path>
+                    <polyline points="7 11 12 16 17 11"></polyline>
+                    <path d="M5 20h14"></path>
+                  </svg>
+                  <span>ダウンロード（.dmg）</span>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: #ffffff;
+                    border: 1px solid oklch(0.86 0.006 80);
+                    font-size: 14.5px;
+                    font-weight: 600;
+                    padding: 12px 22px;
+                    border-radius: 9px;
+                  "
+                >
+                  <span>すべてのリリースを見る</span>
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                width: 440px;
+                background: oklch(0.24 0.012 70);
+                border-radius: 12px;
+                padding: 20px 24px;
+                box-sizing: border-box;
+                box-shadow: 0 12px 30px rgba(20, 15, 8, 0.18);
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: 600;
+                  letter-spacing: 0.08em;
+                  color: oklch(0.65 0.03 75);
+                  padding-bottom: 10px;
+                "
+              >
+                HOMEBREW
+              </div>
+              <div
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 12.5px;
+                  line-height: 2;
+                  color: oklch(0.9 0.01 80);
+                "
+              >
+                <div>
+                  <span style="color: oklch(0.65 0.03 75)">$</span> brew tap
+                  marmot1123/lumencite
+                </div>
+                <div>
+                  <span style="color: oklch(0.65 0.03 75)">$</span> brew trust
+                  marmot1123/lumencite
+                </div>
+                <div>
+                  <span style="color: oklch(0.65 0.03 75)">$</span> brew install
+                  --cask lumencite
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 100px;
+            padding: 32px 56px 40px;
+            border-top: 1px solid oklch(0.95 0.004 80);
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 10px">
+            <img
+              src="lumencite.svg"
+              style="width: 22px; height: 22px"
+              alt="LumenCite"
+            />
+            <span style="font-size: 14px; font-weight: 600">LumenCite</span>
+            <span style="font-size: 12.5px; color: oklch(0.65 0.005 70)"
+              >© 2026 · MIT License</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 28px;
+              font-size: 12.5px;
+              font-weight: 500;
+              color: oklch(0.5 0.008 70);
+            "
+          >
+            <span>GitHub</span>
+            <span>Releases</span>
+            <span>README（日本語）</span>
+            <span>Sponsor</span>
+          </div>
+        </div>
+      </div>
+    </x-dc>
+  </body>
+</html>

@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@400;500;600&amp;display=swap"
+        />
+        <style>
+          body {
+            margin: 0;
+            background: oklch(0.982 0.006 85);
+            font-family: 'IBM Plex Serif', 'Noto Serif JP', Georgia, serif;
+            color: oklch(0.24 0.012 70);
+            -webkit-font-smoothing: antialiased;
+          }
+          a {
+            color: oklch(0.52 0.13 60);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+          }
+          a:hover {
+            color: oklch(0.45 0.13 55);
+          }
+        </style>
+      </helmet>
+      <div
+        style="
+          width: 1440px;
+          background: oklch(0.982 0.006 85);
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <!-- NAV -->
+        <div
+          style="
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding: 30px 96px 26px;
+            border-bottom: 1px solid oklch(0.88 0.012 80);
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 12px">
+            <img
+              src="lumencite.svg"
+              style="width: 26px; height: 26px; align-self: center"
+              alt="LumenCite"
+            />
+            <span
+              style="font-size: 21px; font-weight: 600; letter-spacing: 0.005em"
+              >LumenCite</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: baseline;
+              gap: 36px;
+              font-family: 'IBM Plex Sans', 'Noto Sans JP', sans-serif;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 0.12em;
+              color: oklch(0.5 0.01 70);
+            "
+          >
+            <span>構造化</span>
+            <span>対話</span>
+            <span>執筆</span>
+            <span
+              style="
+                color: oklch(0.52 0.13 60);
+                border-bottom: 1.5px solid oklch(0.62 0.14 65);
+                padding-bottom: 3px;
+              "
+              >ダウンロード</span
+            >
+          </div>
+        </div>
+
+        <!-- HERO -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 400px;
+            gap: 80px;
+            padding: 100px 96px 90px;
+            align-items: start;
+          "
+        >
+          <div style="display: flex; flex-direction: column; gap: 30px">
+            <span
+              style="
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 11.5px;
+                font-weight: 600;
+                letter-spacing: 0.16em;
+                color: oklch(0.55 0.14 60);
+              "
+              >AI-NATIVE REFERENCE MANAGEMENT</span
+            >
+            <h1
+              style="
+                margin: 0;
+                font-size: 72px;
+                line-height: 1.22;
+                font-weight: 500;
+                letter-spacing: -0.005em;
+              "
+            >
+              文献と、<br />対話する。
+            </h1>
+            <p
+              style="
+                margin: 0;
+                font-size: 17.5px;
+                line-height: 2;
+                color: oklch(0.42 0.012 70);
+                max-width: 560px;
+              "
+            >
+              積み上がる PDF
+              を、引用し、検索し、問いかけられる一つのライブラリへ。LumenCite
+              は、読むことと書くことのあいだにある道具です。
+            </p>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 34px;
+                margin-top: 8px;
+                font-family: 'IBM Plex Sans', 'Noto Sans JP', sans-serif;
+              "
+            >
+              <span
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 9px;
+                  font-size: 15px;
+                  font-weight: 600;
+                  color: oklch(0.45 0.13 58);
+                  border-bottom: 1.5px solid oklch(0.62 0.14 65);
+                  padding-bottom: 4px;
+                "
+              >
+                <span>macOS 版をダウンロード</span>
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <polyline points="13 6 19 12 13 18"></polyline>
+                </svg>
+              </span>
+              <span
+                style="
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: oklch(0.5 0.01 70);
+                "
+                >GitHub で見る</span
+              >
+            </div>
+            <span
+              style="
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 11.5px;
+                color: oklch(0.6 0.01 70);
+              "
+              >free · open source (MIT) · macOS / Windows / Linux</span
+            >
+          </div>
+          <div
+            style="
+              background: #fffefb;
+              border: 1px solid oklch(0.88 0.012 80);
+              padding: 30px 32px;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.03),
+                0 14px 34px rgba(30, 22, 10, 0.07);
+            "
+          >
+            <span
+              style="
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 10.5px;
+                font-weight: 600;
+                letter-spacing: 0.18em;
+                color: oklch(0.55 0.14 60);
+              "
+              >ABSTRACT</span
+            >
+            <p
+              style="
+                margin: 0;
+                font-size: 13.5px;
+                line-height: 1.95;
+                text-align: justify;
+                color: oklch(0.32 0.012 70);
+              "
+            >
+              研究者のためのデスクトップ文献管理アプリケーション。PDF と TeX
+              ソースを解析して論文を定理・証明・数式・図表の構造（LCIR）へ変換し、その構造の上で全文検索と
+              AI
+              との対話を提供する。回答は出典を保持し、原文の記述と推論を区別する。BibTeX
+              の自動同期により LaTeX 執筆環境と接続され、MCP
+              サーバーを通じて外部のエージェントからも操作できる。
+            </p>
+            <div
+              style="
+                border-top: 1px solid oklch(0.92 0.008 80);
+                padding-top: 12px;
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 11px;
+                line-height: 1.8;
+                color: oklch(0.55 0.01 70);
+              "
+            >
+              Keywords: reference management, LCIR, agentic chat, BibTeX, MCP
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <div
+          style="
+            border-top: 1px solid oklch(0.88 0.012 80);
+            display: grid;
+            grid-template-columns: 140px minmax(0, 1fr) 440px;
+            gap: 56px;
+            padding: 72px 96px;
+            align-items: start;
+          "
+        >
+          <span
+            style="
+              font-size: 46px;
+              font-weight: 400;
+              color: oklch(0.62 0.14 65);
+              line-height: 1;
+            "
+            >01</span
+          >
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <h2
+              style="
+                margin: 0;
+                font-size: 30px;
+                font-weight: 500;
+                letter-spacing: -0.005em;
+              "
+            >
+              構造化 — 論文が、読める形になる
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 15px;
+                line-height: 2;
+                color: oklch(0.42 0.012 70);
+              "
+            >
+              追加した論文は自動で解析され、セクション・定理・証明・数式・図表のツリー（LCIR）になります。それぞれのノードは出典のページ座標を保ち、「Theorem
+              2.3」という文中の参照は、その定理そのものに解決されます。全文検索も、図表の切り出しも、この構造の上に築かれています。
+            </p>
+          </div>
+          <div
+            style="
+              background: #fffefb;
+              border: 1px solid oklch(0.88 0.012 80);
+              padding: 20px 24px;
+              font-family: 'IBM Plex Sans', 'Noto Sans JP', sans-serif;
+              display: flex;
+              flex-direction: column;
+              gap: 7px;
+            "
+          >
+            <span
+              style="
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 10.5px;
+                color: oklch(0.55 0.01 70);
+                padding-bottom: 8px;
+                border-bottom: 1px solid oklch(0.92 0.008 80);
+              "
+              >arXiv:quant-ph/0303081</span
+            >
+            <span style="font-size: 12.5px; font-weight: 600"
+              >§2 コイン付き量子ウォーク</span
+            >
+            <span
+              style="
+                font-size: 12px;
+                color: oklch(0.45 0.012 70);
+                padding-left: 18px;
+              "
+              >定義 2.1</span
+            >
+            <span
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                color: oklch(0.42 0.12 60);
+                padding-left: 18px;
+                border-left: 2px solid oklch(0.62 0.14 65);
+                margin-left: -2px;
+              "
+              >定理 2.3
+              <span
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-weight: 400;
+                  color: oklch(0.55 0.01 70);
+                "
+                >· p.4</span
+              ></span
+            >
+            <span
+              style="
+                font-size: 12px;
+                color: oklch(0.45 0.012 70);
+                padding-left: 34px;
+              "
+              >証明</span
+            >
+            <span
+              style="
+                font-size: 12px;
+                color: oklch(0.45 0.012 70);
+                padding-left: 18px;
+              "
+              >式 (14) · 図 3</span
+            >
+          </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div
+          style="
+            border-top: 1px solid oklch(0.88 0.012 80);
+            display: grid;
+            grid-template-columns: 140px minmax(0, 1fr) 440px;
+            gap: 56px;
+            padding: 72px 96px;
+            align-items: start;
+          "
+        >
+          <span
+            style="
+              font-size: 46px;
+              font-weight: 400;
+              color: oklch(0.62 0.14 65);
+              line-height: 1;
+            "
+            >02</span
+          >
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <h2
+              style="
+                margin: 0;
+                font-size: 30px;
+                font-weight: 500;
+                letter-spacing: -0.005em;
+              "
+            >
+              対話 — ライブラリ全体に、問いかける
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 15px;
+                line-height: 2;
+                color: oklch(0.42 0.012 70);
+              "
+            >
+              AI
+              は全文検索と構造の読み取りを繰り返しながら、複数の文献を横断して答えを組み立てます。回答のなかで、論文自身の言葉と
+              LumenCite の推論は区別されます。引用をたどれば、PDF
+              のその場所が開きます。壁打ちの相手は、あなたの本棚です。
+            </p>
+          </div>
+          <div
+            style="
+              background: #fffefb;
+              border: 1px solid oklch(0.88 0.012 80);
+              padding: 20px 24px;
+              font-family: 'IBM Plex Sans', 'Noto Sans JP', sans-serif;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            "
+          >
+            <span
+              style="
+                align-self: flex-end;
+                font-size: 12px;
+                background: oklch(0.965 0.01 80);
+                border: 1px solid oklch(0.92 0.008 80);
+                border-radius: 10px 10px 2px 10px;
+                padding: 7px 11px;
+              "
+              >標準的な定式化はどれ？</span
+            >
+            <span
+              style="
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 10.5px;
+                color: oklch(0.55 0.01 70);
+              "
+              >→ fulltext_search("coined quantum walk") · 7 hits</span
+            >
+            <p
+              style="
+                margin: 0;
+                font-size: 12.5px;
+                line-height: 1.85;
+                color: oklch(0.32 0.012 70);
+              "
+            >
+              導入としては Kempe のレビューが最も整理されています。<span
+                style="
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 10px;
+                  color: oklch(0.45 0.12 60);
+                  background: oklch(0.95 0.04 70);
+                  border-radius: 4px;
+                  padding: 1px 6px;
+                "
+                >Kempe 2003 · p.4</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div
+          style="
+            border-top: 1px solid oklch(0.88 0.012 80);
+            display: grid;
+            grid-template-columns: 140px minmax(0, 1fr) 440px;
+            gap: 56px;
+            padding: 72px 96px;
+            align-items: start;
+          "
+        >
+          <span
+            style="
+              font-size: 46px;
+              font-weight: 400;
+              color: oklch(0.62 0.14 65);
+              line-height: 1;
+            "
+            >03</span
+          >
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <h2
+              style="
+                margin: 0;
+                font-size: 30px;
+                font-weight: 500;
+                letter-spacing: -0.005em;
+              "
+            >
+              執筆 — 引用は、書きながら整う
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 15px;
+                line-height: 2;
+                color: oklch(0.42 0.012 70);
+              "
+            >
+              ライブラリの変更は、指定した .bib
+              ファイルへ自動で流れ込みます。cite key
+              は固定でき、重複は自動で回避。エディタを離れずに引用が揃います。CLI
+              と MCP サーバーを備えているので、ターミナルからも、Claude Code
+              のようなエージェントからも、同じライブラリに手が届きます。
+            </p>
+          </div>
+          <div
+            style="
+              background: #fffefb;
+              border: 1px solid oklch(0.88 0.012 80);
+              padding: 20px 24px;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 12px;
+                line-height: 1.9;
+                color: oklch(0.35 0.012 70);
+              "
+              >\cite{<span style="color: oklch(0.5 0.12 60)">kempe2003</span
+              >}</span
+            >
+            <span
+              style="
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 11px;
+                color: oklch(0.55 0.01 70);
+              "
+              >references.bib — 保存のたび自動同期</span
+            >
+          </div>
+        </div>
+
+        <!-- CITE / FOOTER -->
+        <div
+          style="
+            border-top: 1px solid oklch(0.88 0.012 80);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 520px;
+            gap: 80px;
+            padding: 72px 96px 80px;
+            align-items: start;
+          "
+        >
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <h2 style="margin: 0; font-size: 28px; font-weight: 500">
+              静かな道具を、手元に。
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 14.5px;
+                line-height: 1.95;
+                color: oklch(0.42 0.012 70);
+                max-width: 480px;
+              "
+            >
+              無料・オープンソース（MIT）。macOS 版は署名・公証済み、Windows /
+              Linux 版は GitHub Releases から。
+            </p>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                font-family: 'IBM Plex Sans', 'Noto Sans JP', sans-serif;
+              "
+            >
+              <span
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 9px;
+                  font-size: 14.5px;
+                  font-weight: 600;
+                  color: oklch(0.45 0.13 58);
+                  border-bottom: 1.5px solid oklch(0.62 0.14 65);
+                  padding-bottom: 4px;
+                "
+                >ダウンロード</span
+              >
+              <span
+                style="
+                  font-size: 13.5px;
+                  font-weight: 500;
+                  color: oklch(0.5 0.01 70);
+                "
+                >GitHub</span
+              >
+              <span
+                style="
+                  font-size: 13.5px;
+                  font-weight: 500;
+                  color: oklch(0.5 0.01 70);
+                "
+                >Sponsor</span
+              >
+            </div>
+            <span
+              style="
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 12px;
+                color: oklch(0.6 0.01 70);
+                margin-top: 16px;
+              "
+              >© 2026 LumenCite · MIT License</span
+            >
+          </div>
+          <div
+            style="
+              background: oklch(0.965 0.01 80);
+              border: 1px solid oklch(0.9 0.01 80);
+              padding: 22px 26px;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            "
+          >
+            <span
+              style="
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 10.5px;
+                font-weight: 600;
+                letter-spacing: 0.16em;
+                color: oklch(0.55 0.14 60);
+              "
+              >HOW TO CITE THIS TOOL</span
+            >
+            <div
+              style="
+                font-family: 'IBM Plex Mono', monospace;
+                font-size: 12px;
+                line-height: 1.85;
+                color: oklch(0.35 0.012 70);
+              "
+            >
+              <div>@software{lumencite,</div>
+              <div style="padding-left: 18px">author = {marmot1123},</div>
+              <div style="padding-left: 18px">
+                title&nbsp;&nbsp;= {LumenCite},
+              </div>
+              <div style="padding-left: 18px">
+                year&nbsp;&nbsp;&nbsp;= {2026},
+              </div>
+              <div style="padding-left: 18px">
+                url&nbsp;&nbsp;&nbsp;&nbsp;= {https://lumencite.com}
+              </div>
+              <div>}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </x-dc>
+  </body>
+</html>

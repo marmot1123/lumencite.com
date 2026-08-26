@@ -1,7 +1,39 @@
 @import 'tailwindcss';
 
+/*
+ * LumenCite design tokens — mirrors the app's design system
+ * (LumenCite/design/design_handoff_library_view/README.md).
+ */
+@theme {
+  --color-cream: oklch(0.985 0.003 80);
+  --color-surface-2: oklch(0.975 0.004 80);
+  --color-line: oklch(0.92 0.005 80);
+  --color-line-subtle: oklch(0.95 0.004 80);
+  --color-line-strong: oklch(0.86 0.006 80);
+  --color-line-warm: oklch(0.9 0.008 80);
+  --color-ink: oklch(0.22 0.01 70);
+  --color-ink-mute: oklch(0.5 0.008 70);
+  --color-ink-faint: oklch(0.65 0.005 70);
+  --color-accent: oklch(0.62 0.14 65);
+  --color-accent-hover: oklch(0.57 0.14 62);
+  --color-accent-deep: oklch(0.45 0.12 60);
+  --color-accent-text: oklch(0.58 0.15 60);
+  --color-accent-soft: oklch(0.95 0.04 70);
+  --color-accent-soft-border: oklch(0.9 0.05 72);
+  --color-terminal: oklch(0.24 0.012 70);
+  --color-terminal-bar: oklch(0.28 0.012 70);
+
+  --font-sans: 'IBM Plex Sans', 'Noto Sans JP', system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -12,4 +44,8 @@ body,
 
 body {
   margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
