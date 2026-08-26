@@ -8,7 +8,7 @@
   "assets": {
     "directory": "./dist/client",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "none"
+    "not_found_handling": "404-page"
   },
   "routes": [{ "pattern": "lumencite.com", "custom_domain": true }]
 }

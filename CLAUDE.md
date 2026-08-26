@@ -28,7 +28,8 @@ AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サ�
 
 - `wrangler.jsonc` は **assets-only Worker**（`main` なし）。`dist/client` を静的配信し、カスタムドメイン `lumencite.com` を `routes` の `custom_domain` で紐付け。
 - サーバー機能（お問い合わせ、`/` の Accept-Language エッジリダイレクト等）が必要になったら `main` に Worker スクリプトを足す。TanStack Start の Cloudflare アダプタへの移行も可。
-- 404 は現在 `not_found_handling: "none"`（素の 404）。専用 404 ページを作ったら `404-page` に変更する。
+- 404 は `public/404.html`（日英併記の静的ページ）を `not_found_handling: "404-page"` で配信。
+- `www.lumencite.com` → apex はゾーンのリダイレクトルール（301）+ www の proxied DNS レコードで処理（Cloudflare ダッシュボード設定。リポジトリ外）。
 
 ## サイト構成（日英 2 言語）
 

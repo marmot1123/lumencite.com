@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 — LumenCite</title>
+    <link rel="icon" href="/lumencite.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        padding: 24px;
+        background: oklch(0.985 0.003 80);
+        background-image: radial-gradient(
+          ellipse 700px 420px at 50% 30%,
+          oklch(0.95 0.045 75) 0%,
+          oklch(0.985 0.003 80 / 0) 70%
+        );
+        color: oklch(0.22 0.01 70);
+        font-family: 'IBM Plex Sans', 'Noto Sans JP', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+      }
+      img.logo {
+        width: 56px;
+        height: 56px;
+      }
+      .code {
+        font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        font-size: 15px;
+        font-weight: 500;
+        color: oklch(0.45 0.12 60);
+        background: oklch(0.95 0.04 70);
+        border-radius: 999px;
+        padding: 6px 16px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.5;
+      }
+      p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.8;
+        color: oklch(0.5 0.008 70);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+      a.btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 170px;
+        padding: 12px 24px;
+        border-radius: 9px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      a.primary {
+        background: oklch(0.62 0.14 65);
+        color: #ffffff;
+      }
+      a.primary:hover {
+        background: oklch(0.57 0.14 62);
+      }
+      a.secondary {
+        background: #ffffff;
+        border: 1px solid oklch(0.86 0.006 80);
+        color: oklch(0.22 0.01 70);
+      }
+      a.secondary:hover {
+        background: oklch(0.975 0.004 80);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="/lumencite.svg" alt="LumenCite" />
+    <span class="code">404 Not Found</span>
+    <h1>
+      お探しのページが見つかりませんでした。<br />
+      <span lang="en">The page you are looking for does not exist.</span>
+    </h1>
+    <p lang="en">URL をご確認のうえ、トップページからお探しください。<br />Please check the URL, or head back to the top page.</p>
+    <div class="actions">
+      <a class="btn primary" href="/ja">日本語トップへ</a>
+      <a class="btn secondary" href="/en" lang="en">English home</a>
+    </div>
+  </body>
+</html>
