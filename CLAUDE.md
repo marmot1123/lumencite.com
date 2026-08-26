@@ -34,6 +34,8 @@ AI ネイティブな文献管理ソフトウェア **LumenCite** の公式サ�
 
 ## サイト構成（日英 2 言語）
 
+- **ダウンロードボタンは OS 自動判定**（`src/components/landing.tsx` の `useDownloadTarget`）。SSR は macOS 表記がデフォルトで、ハイドレーション後に UA から mac / windows / linux を判定してラベルを切替え、GitHub API（releases/latest）から当該 OS のインストーラ直リンク（.dmg / -setup.exe / .AppImage）を解決する。API 失敗時は Releases ページへフォールバック。
+
 - `/ja`・`/en` — 各言語のランディングページ。`src/components/landing.tsx` の `LandingPage` を共用し、同ファイル内の `COPY` 辞書（`ja` / `en`）で全コピーを管理する。文言変更は `COPY` を編集する。
 - `/` — 言語ゲート（`src/routes/index.tsx`）。`navigator.language` で `/ja` か `/en` へクライアントリダイレクトし、フォールバックとして両言語へのリンクを表示。
 - SEO メタ（title / description / OG / hreflang）は各ルートの `head()` に、共通の favicon・フォント読み込みは `src/routes/__root.tsx` に置く。`<html lang>` は `__root.tsx` がパスから判定。

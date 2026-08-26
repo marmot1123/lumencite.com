@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router'
+import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 
 import {
@@ -22,6 +23,73 @@ const SPONSOR = 'https://github.com/sponsors/marmot1123'
 
 export type Locale = 'ja' | 'en'
 
+/**
+ * OS-aware download target. SSR renders the macOS default; after hydration
+ * the label switches to the visitor's OS and, when the GitHub API answers,
+ * the href upgrades from the releases page to the direct installer asset.
+ */
+type DownloadOS = 'mac' | 'windows' | 'linux' | 'other'
+
+const LATEST_RELEASE_API =
+  'https://api.github.com/repos/marmot1123/LumenCite/releases/latest'
+
+function detectOS(): DownloadOS {
+  const nav = navigator as Navigator & { userAgentData?: { platform?: string } }
+  const platform = (nav.userAgentData?.platform ?? nav.platform).toLowerCase()
+  const ua = navigator.userAgent.toLowerCase()
+  if (ua.includes('android') || ua.includes('iphone') || ua.includes('ipad')) {
+    return 'other'
+  }
+  if (platform.includes('mac') || ua.includes('mac os')) {
+    // iPadOS in desktop mode masquerades as a Mac but has a touch screen
+    return navigator.maxTouchPoints > 1 ? 'other' : 'mac'
+  }
+  if (platform.includes('win') || ua.includes('windows')) return 'windows'
+  if (platform.includes('linux') || ua.includes('linux')) return 'linux'
+  return 'other'
+}
+
+type DownloadTarget = { os: DownloadOS; href: string }
+
+function useDownloadTarget(): DownloadTarget | null {
+  const [target, setTarget] = useState<DownloadTarget | null>(null)
+  useEffect(() => {
+    const os = detectOS()
+    setTarget({ os, href: RELEASES })
+    let cancelled = false
+    fetch(LATEST_RELEASE_API)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((release: unknown) => {
+        if (cancelled || !release) return
+        const assets = (
+          release as {
+            assets?: Array<{ name: string; browser_download_url: string }>
+          }
+        ).assets
+        if (!assets) return
+        const find = (suffix: string) =>
+          assets.find((a) => a.name.toLowerCase().endsWith(suffix))
+            ?.browser_download_url
+        const href =
+          os === 'mac'
+            ? find('.dmg')
+            : os === 'windows'
+              ? (find('-setup.exe') ?? find('.msi'))
+              : os === 'linux'
+                ? find('.appimage')
+                : undefined
+        if (href) setTarget({ os, href })
+      })
+      .catch(() => {
+        // keep the releases-page fallback
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+  return target
+}
+
 type GridItem = {
   icon: typeof IconSearch
   title: string
@@ -40,7 +108,6 @@ type Copy = {
     h1Accent: string
     h1Post: string
     sub: string
-    ctaMac: string
     ctaGithub: string
     note: string
   }
@@ -82,7 +149,8 @@ type Copy = {
     bibNote: string
   }
   grid: { heading: string; items: Array<GridItem>; tail: string }
-  download: { heading: string; body: string; ctaDmg: string; ctaAll: string }
+  download: { heading: string; body: string; ctaAll: string }
+  dl: { hero: Record<DownloadOS, string>; card: Record<DownloadOS, string> }
   footer: { readmeLabel: string; readmeHref: string }
 }
 
@@ -99,7 +167,6 @@ const COPY: Record<Locale, Copy> = {
       h1Accent: '対話できる',
       h1Post: '研究基盤に。',
       sub: 'LumenCite は研究者のためのオープンソース文献管理アプリ。PDF を定理・数式・図表のレベルまで構造化し、ライブラリ全体を横断して AI と対話できます。BibTeX 自動同期で、LaTeX 執筆までそのままつながります。',
-      ctaMac: 'macOS 版をダウンロード',
       ctaGithub: 'GitHub で見る',
       note: '無料 · MIT ライセンス · Universal Binary（Apple Silicon / Intel） · Windows / Linux 版は Releases から',
     },
@@ -212,8 +279,21 @@ const COPY: Record<Locale, Copy> = {
     download: {
       heading: '今日から、ライブラリと話しはじめる。',
       body: 'macOS 版は署名・公証済みで、アプリ内から自動アップデート。Windows（.msi / .exe）と Linux（.AppImage / .deb / .rpm）は GitHub Releases からどうぞ。',
-      ctaDmg: 'ダウンロード（.dmg）',
       ctaAll: 'すべてのリリースを見る',
+    },
+    dl: {
+      hero: {
+        mac: 'macOS 版をダウンロード',
+        windows: 'Windows 版をダウンロード',
+        linux: 'Linux 版をダウンロード',
+        other: 'ダウンロード',
+      },
+      card: {
+        mac: 'ダウンロード（.dmg）',
+        windows: 'ダウンロード（.exe）',
+        linux: 'ダウンロード（.AppImage）',
+        other: 'ダウンロード',
+      },
     },
     footer: {
       readmeLabel: 'README（日本語）',
@@ -232,7 +312,6 @@ const COPY: Record<Locale, Copy> = {
       h1Accent: 'you can talk to',
       h1Post: '.',
       sub: 'LumenCite is an open-source reference manager for researchers. It parses PDFs down to theorems, equations, and figures, and lets you chat with an AI across your entire library. Automatic BibTeX sync connects it straight to your LaTeX writing.',
-      ctaMac: 'Download for macOS',
       ctaGithub: 'View on GitHub',
       note: 'Free · MIT License · Universal Binary (Apple Silicon / Intel) · Windows / Linux builds on Releases',
     },
@@ -348,8 +427,21 @@ const COPY: Record<Locale, Copy> = {
     download: {
       heading: 'Start talking to your library today.',
       body: 'The macOS build is signed and notarized, with in-app auto-updates. Windows (.msi / .exe) and Linux (.AppImage / .deb / .rpm) builds are on GitHub Releases.',
-      ctaDmg: 'Download (.dmg)',
       ctaAll: 'All releases',
+    },
+    dl: {
+      hero: {
+        mac: 'Download for macOS',
+        windows: 'Download for Windows',
+        linux: 'Download for Linux',
+        other: 'Download',
+      },
+      card: {
+        mac: 'Download (.dmg)',
+        windows: 'Download (.exe)',
+        linux: 'Download (.AppImage)',
+        other: 'Download',
+      },
     },
     footer: {
       readmeLabel: 'README',
@@ -360,16 +452,17 @@ const COPY: Record<Locale, Copy> = {
 
 export function LandingPage({ locale }: { locale: Locale }) {
   const t = COPY[locale]
+  const dl = useDownloadTarget()
   return (
     <div className="flex min-h-screen flex-col bg-cream text-ink">
       <Nav t={t} locale={locale} />
       <main>
-        <Hero t={t} />
+        <Hero t={t} dl={dl} />
         <FeatureLcir t={t} />
         <FeatureChat t={t} />
         <FeatureLatex t={t} />
         <FeatureGrid t={t} />
-        <DownloadSection t={t} />
+        <DownloadSection t={t} dl={dl} />
       </main>
       <Footer t={t} />
     </div>
@@ -445,7 +538,7 @@ function LangSwitcher({ locale }: { locale: Locale }) {
 
 /* ============ Hero ============ */
 
-function Hero({ t }: { t: Copy }) {
+function Hero({ t, dl }: { t: Copy; dl: DownloadTarget | null }) {
   return (
     <section className="flex flex-col items-center overflow-hidden px-5 pt-14 md:px-8 md:pt-[84px] [background:radial-gradient(ellipse_900px_500px_at_50%_-80px,oklch(0.95_0.045_75)_0%,oklch(0.985_0.003_80_/_0)_70%)]">
       <p className="flex items-center gap-2 rounded-full bg-accent-soft px-3.5 py-1.5 text-[11px] font-semibold text-accent-deep md:text-[12.5px]">
@@ -464,13 +557,13 @@ function Hero({ t }: { t: Copy }) {
       </p>
       <div className="mt-8 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-3.5">
         <a
-          href={RELEASES}
+          href={dl?.href ?? RELEASES}
           target="_blank"
           rel="noreferrer"
           className="flex w-full items-center justify-center gap-2 rounded-[9px] bg-accent px-6 py-3 text-[15px] font-semibold text-white shadow-[0_2px_8px_oklch(0.62_0.14_65_/_0.3)] hover:bg-accent-hover sm:w-auto"
         >
           <IconDownload size={17} />
-          {t.hero.ctaMac}
+          {t.dl.hero[dl?.os ?? 'mac']}
         </a>
         <a
           href={GITHUB}
@@ -718,7 +811,7 @@ function FeatureGrid({ t }: { t: Copy }) {
 
 /* ============ Download ============ */
 
-function DownloadSection({ t }: { t: Copy }) {
+function DownloadSection({ t, dl }: { t: Copy; dl: DownloadTarget | null }) {
   return (
     <section
       id="download"
@@ -734,13 +827,13 @@ function DownloadSection({ t }: { t: Copy }) {
           </p>
           <div className="mt-2 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             <a
-              href={RELEASES}
+              href={dl?.href ?? RELEASES}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 rounded-[9px] bg-accent px-5 py-3 text-[14.5px] font-semibold text-white hover:bg-accent-hover"
             >
               <IconDownload size={16} />
-              {t.download.ctaDmg}
+              {t.dl.card[dl?.os ?? 'mac']}
             </a>
             <a
               href={`${GITHUB}/releases`}
